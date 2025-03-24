@@ -1,14 +1,6 @@
 #include <vector>
 #include <iostream>
 
-void binaryRadixSort(std::vector<unsigned char>& arr) 
-{
-    for (int bit = 0; bit < 8; ++bit) 
-    {
-        countingSortByBit(arr, bit);
-    }
-}
-
 void countingSortByBit(std::vector<unsigned char>& arr, int bit) 
 {
     std::vector<unsigned char> output(arr.size());
@@ -26,6 +18,14 @@ void countingSortByBit(std::vector<unsigned char>& arr, int bit)
     }
 
     arr = output;
+}
+
+void binaryRadixSort(std::vector<unsigned char>& arr)
+{
+    for (int bit = 0; bit < 8; ++bit)
+    {
+        countingSortByBit(arr, bit);
+    }
 }
 
 void printArray(const std::vector<unsigned char>& arr) 
